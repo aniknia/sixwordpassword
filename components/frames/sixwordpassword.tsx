@@ -14,6 +14,7 @@ import { FiRefreshCw, FiCopy } from "react-icons/fi";
 export default function SixWordPassword() {
   const wordList = require("../../public/effwordlist.json");
   const [rollState, setRollState] = useState(true);
+  const [entropy, setEntropy] = useState(0);
   const [wordArray, setWordArray] = useState([
     "unkown",
     "unkown",
@@ -35,30 +36,39 @@ export default function SixWordPassword() {
     let tempNumArray = [];
     let tempWordArray = [];
     let tempNum = 0;
+    let length = 0;
     for (let i = 0; i < 6; i++) {
       tempNum = Math.floor(Math.random() * Object.keys(wordList).length);
       tempNumArray[i] = wordList[tempNum].number;
       tempWordArray[i] = wordList[tempNum].word;
+      length += parseInt(wordList[tempNum].word.length);
     }
     setNumArray(tempNumArray);
     setWordArray(tempWordArray);
+    let tempEntropy = (length * Math.log(26)) / Math.log(2);
+    setEntropy(tempEntropy.toFixed(2));
   }, [rollState]);
 
   return (
     <>
       <VStack m="auto" p="20px">
         <Flex m="auto" wrap="wrap" align="center" justify="space-between">
-          <Box
-            h={["74px", "50px"]}
-            w={["325px", "600px"]}
-            m="auto"
-            p="12px"
-            borderWidth="1px"
-            borderRadius="lg"
-          >
-            <Text m="auto" align="center" opacity="0.6">
-              {wordArray.join("")}
-            </Text>{" "}
+          <Box>
+            <Box
+              h={["74px", "50px"]}
+              w={["325px", "600px"]}
+              m="auto"
+              p="12px"
+              borderWidth="1px"
+              borderRadius="lg"
+            >
+              <Text m="auto" align="center" opacity="0.6">
+                {wordArray.join("")}
+              </Text>{" "}
+            </Box>
+            <Text p="2px" fontSize="sm" align="center" opacity="0.6">
+              Entropy: {entropy}
+            </Text>
           </Box>
           <HStack m="auto" p="10px">
             <IconButton
