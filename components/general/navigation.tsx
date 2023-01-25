@@ -1,4 +1,4 @@
-import { Stack, Flex, Box, Divider } from "@chakra-ui/react";
+import { Stack, Flex, Box, Text } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "./colormodeswitcher";
 
 export default function NavBar() {
@@ -15,7 +15,7 @@ export default function NavBar() {
         >
           <Box p="1" w="48px" h="48px"></Box>
           <Box p="1">
-            <h1>Six Word Password</h1>
+            <Text>Six Word Password</Text>
           </Box>
           <Box p="1">
             <ColorModeSwitcher />
