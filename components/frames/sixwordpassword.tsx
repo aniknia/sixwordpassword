@@ -45,8 +45,8 @@ export default function SixWordPassword() {
     }
     setNumArray(tempNumArray);
     setWordArray(tempWordArray);
-    let tempEntropy = (length * Math.log(26)) / Math.log(2);
-    setEntropy(tempEntropy.toFixed(2));
+    const tempEntropy = ((length * Math.log(26)) / Math.log(2)).toFixed(4);
+    setEntropy(parseInt(tempEntropy));
   }, [rollState]);
 
   return (
@@ -67,7 +67,7 @@ export default function SixWordPassword() {
               </Text>{" "}
             </Box>
             <Text p="2px" fontSize="sm" align="center" opacity="0.6">
-              Entropy: {entropy}
+              Entropy: {entropy} bits
             </Text>
           </Box>
           <HStack m="auto" p="10px">
