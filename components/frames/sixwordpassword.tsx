@@ -53,7 +53,7 @@ export default function SixWordPassword() {
     <>
       <VStack m="auto" p="20px">
         <Flex m="auto" wrap="wrap" align="center" justify="space-between">
-          <Box>
+          <Box m="auto" pb="10px">
             <Box
               h={["74px", "50px"]}
               w={["325px", "600px"]}
@@ -70,7 +70,7 @@ export default function SixWordPassword() {
               Entropy: {entropy} bits
             </Text>
           </Box>
-          <HStack m="auto" p="10px">
+          <HStack ml="auto" mr="auto" mb="auto" pl="10px" pr="10px">
             <IconButton
               h="50px"
               w="50px"
