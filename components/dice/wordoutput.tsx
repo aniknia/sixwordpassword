@@ -13,7 +13,7 @@ export default function WordOutput({ number = "11111", word = "unkown" }) {
   }, [number, word]);
   return (
     <>
-      <VStack w="272px" h="96px" justify="center">
+      <VStack w="272px" h="96px" justify="center" m="20px">
         <HStack w="272px" h="48px">
           <Die number={parseInt(number[0])} duration={1} state={state} />
           <Die number={parseInt(number[1])} duration={1.5} state={state} />

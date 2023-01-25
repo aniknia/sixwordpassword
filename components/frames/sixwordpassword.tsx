@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
-import { Box, Flex, VStack, HStack, Text, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  VStack,
+  HStack,
+  Text,
+  Button,
+  IconButton,
+} from "@chakra-ui/react";
 import WordOutput from "../dice/wordoutput";
+import { FiRefreshCw, FiCopy } from "react-icons/fi";
 
 export default function SixWordPassword() {
   const wordList = require("../../public/effwordlist.json");
@@ -37,44 +46,46 @@ export default function SixWordPassword() {
 
   return (
     <>
-      <Box m="auto">
-        <HStack
-          h="58px"
-          w="54em"
-          m="auto"
-          p="12px"
-          borderWidth="1px"
-          borderRadius="lg"
-          justify="space-between"
-        >
-          <Text>{wordArray.join("")}</Text>{" "}
-          <Box>
-            <Button variant="outline" onClick={() => setRollState(!rollState)}>
-              Roll
-            </Button>
-            <Button
+      <VStack m="auto" p="20px">
+        <Flex m="auto" wrap="wrap" align="center" justify="space-between">
+          <Box m="auto" p="12px" borderWidth="1px" borderRadius="lg">
+            <Text m="auto">{wordArray.join("")}</Text>{" "}
+          </Box>
+          <HStack m="auto" p="10px">
+            <IconButton
+              h="50px"
+              w="50px"
+              aria-label="Roll"
+              icon={<FiRefreshCw size="25px" />}
+              variant="outline"
+              onClick={() => setRollState(!rollState)}
+            />
+
+            <IconButton
+              h="50px"
+              w="50px"
+              aria-label="Copy"
+              icon={<FiCopy size="25px" />}
               variant="outline"
               onClick={() => {
                 navigator.clipboard.writeText(wordArray.join(""));
               }}
-            >
-              Copy
-            </Button>
-          </Box>
-        </HStack>
-        <VStack m="20px">
-          <HStack spacing="50px">
+            />
+          </HStack>
+        </Flex>
+        <VStack m="auto" p="auto">
+          <Flex wrap="wrap" align="center" justify="space-around">
             <WordOutput number={numArray[0]} word={wordArray[0]} />
             <WordOutput number={numArray[1]} word={wordArray[1]} />
             <WordOutput number={numArray[2]} word={wordArray[2]} />
-          </HStack>
-          <HStack spacing="50px">
+          </Flex>
+          <Flex wrap="wrap" align="center" justify="space-around">
             <WordOutput number={numArray[3]} word={wordArray[3]} />
             <WordOutput number={numArray[4]} word={wordArray[4]} />
             <WordOutput number={numArray[5]} word={wordArray[5]} />
-          </HStack>
+          </Flex>
         </VStack>
-      </Box>
+      </VStack>
     </>
   );
 }
