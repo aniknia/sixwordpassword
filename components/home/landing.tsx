@@ -3,7 +3,7 @@ import SixWordPassword from "../frames/sixwordpassword";
 
 export default function Landing() {
   return (
-    <Flex minH="calc(100vh - 96px)">
+    <Flex minH="calc(100vh - 200px)">
       <SixWordPassword />
     </Flex>
   );

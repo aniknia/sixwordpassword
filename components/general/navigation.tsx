@@ -5,20 +5,17 @@ export default function NavBar() {
   return (
     <>
       <Stack>
-        <Flex
-          align="center"
-          justify="space-between"
-          gap="2"
-          pt="2"
-          pl="2"
-          pr="2"
-        >
-          <Box p="1" w="48px" h="48px"></Box>
+        <Flex align="center" justify="space-around" gap="2" pt="10">
           <Box p="1">
-            <Text>Six Word Password</Text>
-          </Box>
-          <Box p="1">
-            <ColorModeSwitcher />
+            <Text
+              bgGradient="linear(to-l, #279df5, #6250ff)"
+              bgClip="text"
+              fontSize="6xl"
+              fontWeight="extrabold"
+              align="center"
+            >
+              Six Word Password
+            </Text>
           </Box>
         </Flex>
       </Stack>

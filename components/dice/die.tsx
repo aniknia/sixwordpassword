@@ -34,12 +34,12 @@ export default function Die({
   // end on final number
 
   const die: { die: JSX.Element }[] = [
-    { die: <BsDice1 size={size} /> },
-    { die: <BsDice2 size={size} /> },
-    { die: <BsDice3 size={size} /> },
-    { die: <BsDice4 size={size} /> },
-    { die: <BsDice5 size={size} /> },
-    { die: <BsDice6 size={size} /> },
+    { die: <BsDice1 color="#6151ff" size={size} /> },
+    { die: <BsDice2 color="#4872fb" size={size} /> },
+    { die: <BsDice3 color="#3091f7" size={size} /> },
+    { die: <BsDice4 color="#289cf5" size={size} /> },
+    { die: <BsDice5 color="#3985f8" size={size} /> },
+    { die: <BsDice6 color="#5265fc" size={size} /> },
   ];
   const [currentDie, SetCurrentDie] = useState(die[0]);
 
