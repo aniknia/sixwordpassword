@@ -48,8 +48,10 @@ export default function SixWordPassword() {
     <>
       <VStack m="auto" p="20px">
         <Flex m="auto" wrap="wrap" align="center" justify="space-between">
-          <Box m="auto" p="12px" borderWidth="1px" borderRadius="lg">
-            <Text m="auto">{wordArray.join("")}</Text>{" "}
+          <Box w="450px" m="auto" p="12px" borderWidth="1px" borderRadius="lg">
+            <Text m="auto" align="center">
+              {wordArray.join("")}
+            </Text>{" "}
           </Box>
           <HStack m="auto" p="10px">
             <IconButton
