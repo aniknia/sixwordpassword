@@ -56,7 +56,7 @@ export default function SixWordPassword() {
             borderWidth="1px"
             borderRadius="lg"
           >
-            <Text m="auto" align="center">
+            <Text m="auto" align="center" opacity="0.6">
               {wordArray.join("")}
             </Text>{" "}
           </Box>
