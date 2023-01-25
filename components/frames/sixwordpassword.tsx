@@ -50,7 +50,7 @@ export default function SixWordPassword() {
         <Flex m="auto" wrap="wrap" align="center" justify="space-between">
           <Box
             h={["74px", "50px"]}
-            w={["350px", "600px"]}
+            w={["325px", "600px"]}
             m="auto"
             p="12px"
             borderWidth="1px"
