@@ -5,7 +5,7 @@ import {
   VStack,
   HStack,
   Text,
-  Button,
+  useToast,
   IconButton,
 } from "@chakra-ui/react";
 import WordOutput from "../dice/wordoutput";
@@ -31,6 +31,7 @@ export default function SixWordPassword() {
     "11111",
     "11111",
   ]);
+  const toast = useToast();
 
   useEffect(() => {
     let tempNumArray = [];
@@ -88,6 +89,13 @@ export default function SixWordPassword() {
               variant="outline"
               onClick={() => {
                 navigator.clipboard.writeText(wordArray.join(""));
+                toast({
+                  position: "bottom-left",
+                  description: "Password copied",
+                  status: "success",
+                  duration: 2500,
+                  isClosable: true,
+                });
               }}
             />
           </HStack>
