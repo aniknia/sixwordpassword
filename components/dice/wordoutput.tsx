@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { HStack, VStack } from "@chakra-ui/react";
 import Die from "./die";
 import Word from "./word";
 
@@ -13,16 +12,16 @@ export default function WordOutput({ number = "11111", word = "unkown" }) {
   }, [number, word]);
   return (
     <>
-      <VStack w="272px" h="96px" justify="center" m="20px">
-        <HStack w="272px" h="48px">
+      <div style={{ width: "272px", height: "96px", display: "flex", flexDirection: "column", alignItems: "center", margin: "20px" }}>
+        <div style={{ width: "272px", height: "48px", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
           <Die number={parseInt(number[0])} duration={1} state={state} />
           <Die number={parseInt(number[1])} duration={1.5} state={state} />
           <Die number={parseInt(number[2])} duration={2} state={state} />
           <Die number={parseInt(number[3])} duration={2.5} state={state} />
           <Die number={parseInt(number[4])} duration={3} state={state} />
-        </HStack>
+        </div>
         <Word word={word} duration={3} />
-      </VStack>
+      </div>
     </>
   );
 }

@@ -52,25 +52,19 @@ export default function SixWordPassword() {
 
   return (
     <>
-      <VStack m="auto" p="20px">
-        <Flex m="auto" wrap="wrap" align="center" justify="space-between">
-          <Box m="auto" pb="10px">
-            <Box
-              h={["74px", "50px"]}
-              w={["325px", "600px"]}
-              m="auto"
-              p="12px"
-              borderWidth="1px"
-              borderRadius="lg"
+      <div style={{ width: "100%", margin: "auto", padding: "20px", display: "flex", flexDirection: "column" }}>
+        <div style={{ margin: "auto", padding: "20px", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ minWidth: "300px", margin: "auto", padding: "10px", display: "flex", flexDirection: "column" }}>
+            <div style={{ height: "50px", padding: "12px", display: "flex", justifyContent: "space-around", borderWidth: "1px", borderRadius: "0.5rem" }}
             >
-              <Text m="auto" align="center" opacity="0.6">
+              <p style={{ opacity: "0.6" }}>
                 {wordArray.join("")}
-              </Text>{" "}
-            </Box>
+              </p>{" "}
+            </div>
             <Text p="2px" fontSize="sm" align="center" opacity="0.6">
               Entropy: {entropy} bits
             </Text>
-          </Box>
+          </div>
           <HStack ml="auto" mr="auto" mb="auto" pl="10px" pr="10px">
             <IconButton
               h="50px"
@@ -99,7 +93,7 @@ export default function SixWordPassword() {
               }}
             />
           </HStack>
-        </Flex>
+        </div>
         <VStack m="auto" p="auto">
           <Flex wrap="wrap" align="center" justify="space-around">
             <WordOutput number={numArray[0]} word={wordArray[0]} />
@@ -112,7 +106,7 @@ export default function SixWordPassword() {
             <WordOutput number={numArray[5]} word={wordArray[5]} />
           </Flex>
         </VStack>
-      </VStack>
+      </div>
     </>
   );
 }

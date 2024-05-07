@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { Text } from "@chakra-ui/react";
 
 // TODO: design several ways of revealing the word (fade, slot machine, )
 
 function create_array(wordList: Object, duration: number) {
   let randomNumber = Math.floor(
     Math.random() *
-      (Object.keys(wordList).length - Math.floor((duration * 1000) / 50))
+    (Object.keys(wordList).length - Math.floor((duration * 1000) / 50))
   );
 
   let wordArray = Array.from(
@@ -37,9 +36,9 @@ export default function Word({ word = "blank", duration = 1 }) {
 
   return (
     <>
-      <Text mt={[0, "3px !important"]} fontSize="3xl">
+      <p style={{ fontSize: '1.875rem', marginTop: '3px important' }}>
         {currentWord}
-      </Text>
+      </p>
     </>
   );
 }
